@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_soa_invoice_details_of_charges_product_account_receivable"
+              inherit_id="awb_reports.report_soa_invoice_details_of_charges">
+        <xpath expr="//thead//td[normalize-space(.)='Amount']" position="after">
+            <td class="text-start" style="border: none;">Account Receivable</td>
+        </xpath>
+        <xpath expr="//t[@t-if=&quot;line.display_type == 'product' and line.quantity != 0&quot;]/td[last()]" position="after">
+            <td class="text-start" style="border: none;">
+                <span t-field="line.product_account_receivable_id"/>
+            </td>
+        </xpath>
+        <xpath expr="//t[@t-if='lines']/div/table" position="after">
+            <t t-set="account_receivable_summary" t-value="o._get_product_account_receivable_summary_for_report()"/>
+            <t t-if="len(account_receivable_summary) &gt; 1">
+                <div style="padding: 6px; font-size: 8pt;">
+                    <strong>Account Receivable Summary</strong>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 4px;">
+                        <thead>
+                            <tr style="font-style: italic;">
+                                <td style="border: none;">Account</td>
+                                <td class="text-end" style="border: none;">Amount</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="account_receivable_summary" t-as="account_receivable_row">
+                                <td style="border: none;">
+                                    <span t-esc="account_receivable_row['account_code']"/>
+                                    <span t-if="account_receivable_row['account_name']"> - </span>
+                                    <span t-esc="account_receivable_row['account_name']"/>
+                                </td>
+                                <td class="text-end" style="border: none;">
+                                    <span t-esc="account_receivable_row['amount_formatted']"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>
