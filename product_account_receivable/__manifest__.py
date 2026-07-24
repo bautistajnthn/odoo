@@ -6,7 +6,7 @@
     "category": "Accounting/Accounting",
     "author": "bautistajnthn",
     "license": "LGPL-3",
-    "price": 40.00,
+    "price": 19.00,
     "currency": "EUR",
     "depends": [
         "account",
