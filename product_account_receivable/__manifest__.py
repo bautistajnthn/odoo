@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "Product Account Receivable – Split AR by Product",
+    "name": "Account Receivable – Split AR by Product",
     "summary": "Per-product / category account receivable (AR). Split invoice journal items and customer payments by product AR instead of one partner receivable.",
     "version": "19.0.1.1.0",
     "category": "Accounting/Accounting",
