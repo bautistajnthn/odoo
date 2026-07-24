@@ -10,12 +10,10 @@
     "currency": "EUR",
     "depends": [
         "account",
-        "awb_reports",
     ],
     "data": [
         "views/product_views.xml",
         "report/report_invoice.xml",
-        "report/report_soa_invoice.xml",
     ],
     "installable": True,
     "application": False,
