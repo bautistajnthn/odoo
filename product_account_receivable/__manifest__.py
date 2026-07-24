@@ -4,7 +4,7 @@
     "summary": "Set account receivable per product or category; invoice journal items and payments post to those AR accounts.",
     "version": "19.0.1.1.0",
     "category": "Accounting/Accounting",
-    "author": "Jonathan Bautista",
+    "author": "bautistajnthn",
     "license": "LGPL-3",
     "price": 40.00,
     "currency": "EUR",
